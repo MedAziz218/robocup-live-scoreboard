@@ -2,6 +2,7 @@ import * as lodash from 'lodash';
 import * as React from 'react';
 import { Space } from 'react-zoomable-ui';
 import Tournament from '../../components/Tournament';
+
 const colorFor = (i) => {
   switch (i % 4) {
     case 0:
@@ -16,6 +17,8 @@ const colorFor = (i) => {
 };
 
 export const TournamentPage = () => {
+  const spaceRef = React.useRef(null);
+
   return (
     <Space style={{ backgroundColor: '#1d1c18' }} innerDivStyle={{ width: 10000 }}>
      
