@@ -5,15 +5,14 @@ import { ZoomTestPage } from "./pages/zoomtestPage/ZoomTestPage";
 import { suppressBrowserZooming } from "react-zoomable-ui";
 import { useEffect } from "react";
 import BracketGame from "./components/BracketGame";
-
-import Tournament from "./components/Tournament";
+import { TournamentPage } from "./pages/tournamentPage/TournamentPage";
 function App() {
   useEffect(suppressBrowserZooming);
 
   return (
     <>
-      <div className="bg-AREgray">
-        <Tournament />
+      <div>
+        <TournamentPage />
       </div>
     </>
   );
