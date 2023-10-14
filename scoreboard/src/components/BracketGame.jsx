@@ -15,7 +15,7 @@ const BracketGame = ({yes=1}) => {
             setHeadY(rect.y - rect.height/2)
             setHeadX(rect.x + rect.width)
         }
-    }, []);
+    };
 
 
     console.log("point", headX, headY);
