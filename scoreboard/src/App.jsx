@@ -1,11 +1,10 @@
-import BracketGame from "./components/BracketGame"
-
+import Tournament from "./components/Tournament"
 function App() {
 
   return (
-    <>
-      <BracketGame/>  
-    </>
+    <div  className="flex justify-center items-center gap">
+      <Tournament/>  
+    </div>
   )
 }
 

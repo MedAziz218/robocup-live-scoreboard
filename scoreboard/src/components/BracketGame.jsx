@@ -1,11 +1,16 @@
 import React from 'react'
+import Team from './Team';
 
 const BracketGame = () => {
     const name = "firas";
     return (
-        <div className='bg-blue-300 text-black'>
-            {name}
+        <div>
+            <Team name={name} />
+            <Team name={name} />
+            <Team name={name} />
+            <Team name={name} />
         </div>
+
     )
 }
 
