@@ -4,19 +4,22 @@ import Team from './Team';
 const BracketGame = () => {
     const name = "firas";
     const divRef = useRef(null);
-    const [x, setX] = useState(0);
-    const [y, setY] = useState(0);
+    const [tailX, setTailX] = useState(0);
+    const [headX, setHeadX] = useState(0);
+    const [headY, setHeadY] = useState(0);
 
 
     useEffect(() => {
         if (divRef.current) {
             const rect = divRef.current.getBoundingClientRect();
-            setX(rect.x + rect.width)
-            setY(rect.y - rect.height/2)
+            setTailX(rect.x + rect.width)
+            setHeadY(rect.y - rect.height/2)
+            setHeadX(rect.x + rect.width)
         }
     }, []);
 
-    console.log("point", x, y);
+
+    console.log("point", headX, headY);
 
     return (
         <div ref={divRef}>
