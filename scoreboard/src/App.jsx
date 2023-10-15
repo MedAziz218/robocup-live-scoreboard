@@ -21,7 +21,7 @@ function App() {
           padding: "5px 10px",
         }}
       >
-        <FocusButton spaceRef={spaceRef} element_id={"tournament"}>
+        <FocusButton spaceRef={spaceRef} element_id={"tournament1"}>
           A1
         </FocusButton>
         <FocusButton spaceRef={spaceRef} element_id={"tournament2"}>

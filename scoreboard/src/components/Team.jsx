@@ -28,7 +28,7 @@ const SimpleTapCountingButton = React.memo(() => {
   );
 });
 
-const Team = ({ team_name , robot_name,setWinner,index=null}) => {
+const Team = ({ team_name , robot_name,index=null}) => {
   const neutral_color = "#E1DBBD"
   const win_color = "green"
   const loose_color = "red"
@@ -42,8 +42,9 @@ const Team = ({ team_name , robot_name,setWinner,index=null}) => {
   return (
     <div className="bg-AREyellow text-black w-64 border-2 border-gray-800 flex justify-between">
      {index&& <p className="flex justify-center items-center bg-AREbeige w-8 font-bold">{index}</p>}
-      <p className="w-60 flex justify-left items-center pl-2 font-bold">{`[${team_name}] ${robot_name}`}</p>
-
+      
+      { team_name&&robot_name ?<p className="w-60 flex justify-left items-center pl-2 font-bold">{`[${team_name}] ${robot_name}`}</p>:
+      <p className="w-60 flex justify-left items-center pl-2 font-bold"></p>}
       {/* <SimpleTapCountingButton/> */}
       <Pressable
         // className=" bg-AREbeige "

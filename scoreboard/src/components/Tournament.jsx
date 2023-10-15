@@ -1,28 +1,32 @@
-import React from 'react'
-import Column from './Column'
+import React from "react";
+import Column from "./Column";
+
+const Tournament = ({ spaceRef, tournamentID, listOfDuels }) => {
+  let length = listOfDuels.length 
+  // numberOfColumns = numberOfColumns + listOfDuels.length % 8 == 0 ? 0 : 1
+  let x = []
+    x.slice()
+  return (
+    <div
+      className="flex flex-row w-screen gap-8 ml-40"
+      id={tournamentID}
+      style={{ border: "2px solid red", width: "fit-content",margin:'100px' }}
+    >
+      {/* {Array.from({ length: numberOfColumns }).map(() => (
+        <Column num={8} tournamentID={tournamentID} />
+      ))} */}
+      {<Column num={8} tournamentID={tournamentID+'-1'} duels_data={listOfDuels.slice(0,8)} />}
+      {<Column num={8} tournamentID={tournamentID+'-2'} duels_data={listOfDuels.slice(8,16)} />}
+      {length>16&&<Column num={8} tournamentID={tournamentID+'-3'} duels_data={listOfDuels.slice(16,24)} />}
+      {length>24&&<Column num={8} tournamentID={tournamentID+'-4'} duels_data={listOfDuels.slice(24,32)} />}
 
 
+      {/* <Column num={8} tournamentID={tournamentID} duels_data={listOfDuels.slice(8,16)} /> */}
+      {/* <Column num={8} tournamentID={tournamentID} duels_data={listOfDuels.slice(16,24)} /> */}
+      {/* <Column num={8} tournamentID={tournamentID} duels_data={listOfDuels.slice(24,32)} /> */}
 
+    </div>
+  );
+};
 
-
-const Tournament = ({spaceRef}) => {
-    return (
-        <>
-        <div className="flex flex-row w-screen gap-8 ml-40" id='tournament' style={{border:'2px solid red' ,width:'fit-content'}}>
-            <Column num={8} />
-            <Column num={8} />
-            <Column num={8} />
-            <Column num={8} />
-        </div>
-        <div className="flex flex-row w-screen gap-8 ml-40 mt-20" id='tournament2' style={{border:'2px solid red' ,width:'fit-content'}}>
-            <Column num={8} />
-            <Column num={8} />
-            <Column num={8} />
-            <Column num={8} />
-        </div>
-
-        </>
-    )
-}
-
-export default Tournament
+export default Tournament;
