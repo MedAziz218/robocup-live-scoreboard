@@ -3,9 +3,8 @@ import React from "react";
 export default function FocusButton({spaceRef,element_id,children}) {
   return (
     <button
-      style={{ backgroundColor: "magenta" }}
+      style={{ backgroundColor: "magenta",marginLeft:'4px' }}
       onClick={() => {
-        console.log("yes");
         const element = document.getElementById(element_id);
         if (element) {
           spaceRef.current?.viewPort?.camera.centerFitElementIntoView(

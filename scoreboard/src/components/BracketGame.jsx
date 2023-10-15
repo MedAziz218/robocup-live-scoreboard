@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Team from "./Team";
 
-const BracketGame = ({ teams_data }) => {
+const BracketGame = ({ teams_data,tournamentID }) => {
   //   const teams_data = [
   //     { team_name: "ENSI", robot_name: "3jeli" },
   //     { team_name: "ENISO", robot_name: "la9bi7" },
@@ -28,7 +28,7 @@ const BracketGame = ({ teams_data }) => {
   //   console.log("point", headX, headY);
 
   return (
-    <div ref={divRef} style={{minHeight:'50px'}}>
+    <div ref={divRef} style={{minHeight:'50px'}} id={tournamentID}>
       
       <Team  index={1} {...teams_data[1]} />
       <Team  index={2} {...teams_data[2]} />
