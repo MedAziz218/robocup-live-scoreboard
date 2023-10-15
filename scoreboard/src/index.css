@@ -17,3 +17,10 @@ body,
   width: 100%;
   overflow: hidden;
 }
+
+body{
+  background-image: url('./assets/pp.png');
+  background-repeat: no-repeat;
+  background-size:cover ;
+  background-position: center;
+}

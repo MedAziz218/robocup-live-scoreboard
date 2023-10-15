@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Team from "./Team";
 
-const BracketGame = ({ teams_data,tournamentID }) => {
+const BracketGame = ({ teams_data, tournamentID }) => {
   //   const teams_data = [
   //     { team_name: "ENSI", robot_name: "3jeli" },
   //     { team_name: "ENISO", robot_name: "la9bi7" },
@@ -9,7 +9,7 @@ const BracketGame = ({ teams_data,tournamentID }) => {
   //     // { team_name: "ENICAR", robot_name: "mohsen" },
   //   ];
   //   state: 0->neutre 1-> winner 2-> loser
-//   console.log(teams_data[1]);
+//   console.log(teams_data);
 
   const divRef = useRef(null);
   const [tailX, setTailX] = useState(0);
@@ -28,14 +28,16 @@ const BracketGame = ({ teams_data,tournamentID }) => {
   //   console.log("point", headX, headY);
 
   return (
-    <div ref={divRef} style={{minHeight:'50px'}} id={tournamentID}>
-      
-      <Team  index={1} {...teams_data[1]} />
-      <Team  index={2} {...teams_data[2]} />
+    <div>
+        <p className="font-semibold text-lg text-white">{`Match ${teams_data.index}`}</p>
+      <div ref={divRef} style={{ minHeight: "50px" }} id={tournamentID}>
+        <Team index={1} {...teams_data[1]} />
+        <Team index={2} {...teams_data[2]} />
 
-      {/* {teams_data.map((value, index) => {
+        {/* {teams_data.map((value, index) => {
           return <Team setState={setState} index={index + 1} {...value} />;
         })} */}
+      </div>
     </div>
   );
 };

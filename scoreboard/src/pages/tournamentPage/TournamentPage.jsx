@@ -4,36 +4,38 @@ import { Space } from "react-zoomable-ui";
 import Tournament from "../../components/Tournament";
 
 
-const TEXT_OF_ROBOTS = `Maptrix, INSAT 
-pathfinder, INSAT 
-ka3bi4thewin, INSAT 
-luffy, INSAT 
-Unfollower, INSAT 
-INNOV8, INSAT 
-El Monji , INSAT 
-Alpha , INSAT 
-Smec robot, INSAT 
-Xbot, INSAT 
-Mario, INSAT 
-Fab Supra, ENIT 
-Erreb3i, ENIT 
-Weld El Haj, ENIT 
-dragon, ENIT 
-Dragon, ENIT 
-Runner, FST 
-Optimus Prime, ESPRIT 
-Robo gladiador , ESPRIT 
-PANTHER , ESPRIT 
-Dante, ESPRIT 
-NeoRobot, ESPRIT 
-Linobot, ESPRIT 
-NO_NAME, ULT 
-Omouri, ULT 
-El 3OU9, ULT 
-Teemo, ISTIC 
-BumbleBee, ISTIC 
-Chabrouch, Istic
-Smart Shark, Iset'Com`;
+const TEXT_OF_ROBOTS = `PANTHER,ESPRIT
+Unfollower,vide
+ZINA,enicar
+Maptrix,INSAT
+Smart Shark,Iset'Com Tunis
+Dante,Esprit
+Weld El Haj,ENIT
+Runner,Fst
+Sankou7,enicar
+Fi SUREEEE,enicar
+Omouri,ULT
+Ti base,enicar
+Magayver,ENIM
+Robotino,ENIM
+7nach rebe7,Enstab
+luffy,INSAT
+Chacotome,vide
+Fighter,vide
+Battouta,vide
+Dragon,Enit
+THE THUNDER,Enetcom
+El 3OU9,Ult
+Dembele,vide
+Mario,INSAT
+Zonixxx,Enim
+M5 CS,vide
+El Monji,INSAT
+M8,vide
+Dragon2,Enit
+Oméga,vide
+BumbleBee,ISTIC
+Sigma,ENIM`;
 
 const parser = (TEXT_OF_ROBOTS) => {
   let result = TEXT_OF_ROBOTS.split("\n");
@@ -55,7 +57,7 @@ const create_duels = (LIST_OF_ROBOT) => {
       p1 = { team_name: p1[1], robot_name: p1[0] };
       p2 = { team_name: p2[1], robot_name: p2[0] };
 
-      let match = { 1: p1, 2: p2, winner: 0 };
+      let match = { 1: p1, 2: p2, winner: 0, index:Math.floor(i/2)+1 };
       list.push(match);
     }
   }
@@ -66,6 +68,7 @@ const create_duels = (LIST_OF_ROBOT) => {
 const getListOfDuels = (TEXT_OF_ROBOTS)=>{
     const LIST_OF_ROBOT = parser(TEXT_OF_ROBOTS);
     const LIST_OF_DUELS = create_duels(LIST_OF_ROBOT);
+    // console.log(LIST_OF_DUELS)
     return LIST_OF_DUELS;
 
 }
@@ -78,11 +81,11 @@ export const TournamentPage = ({spaceRef}) => {
     
         <Space
           ref={spaceRef}
-          style={{ backgroundColor: "#1d1c18" }}
+          // style={{ backgroundColor: "#1d1c18" }}
           // innerDivStyle={{ width: 1000 }}
         >
             <Tournament spaceRef={spaceRef} listOfDuels={tournament1_list} tournamentID='tournament1' />
-            <Tournament spaceRef={spaceRef} listOfDuels={tournament1_list} tournamentID='tournament2' />
+            {/* <Tournament spaceRef={spaceRef} listOfDuels={tournament1_list} tournamentID='tournament2' /> */}
 
             {/* <Tournament spaceRef={spaceRef} /> */}
 

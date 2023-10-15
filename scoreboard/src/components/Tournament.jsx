@@ -10,7 +10,7 @@ const Tournament = ({ spaceRef, tournamentID, listOfDuels }) => {
     <div
       className="flex flex-row w-screen gap-8 ml-40"
       id={tournamentID}
-      style={{ border: "2px solid red", width: "fit-content",margin:'100px' }}
+      style={{ border: "1px solid #E1d1bd",borderRadius:'10px', width: "fit-content",margin:'100px',padding:'25px' }}
     >
       {/* {Array.from({ length: numberOfColumns }).map(() => (
         <Column num={8} tournamentID={tournamentID} />
